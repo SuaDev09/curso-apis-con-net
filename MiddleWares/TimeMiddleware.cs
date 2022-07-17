@@ -9,8 +9,7 @@ public class TimeMiddleware
 
     public async Task Invoke(Microsoft.AspNetCore.Http.HttpContext context)
     {
-        await next(context);
-
+        await next(context);        
         //El request que tenga el parametro "time" le vamos a retornar la hora del servidor
         if(context.Request.Query.Any(p => p.Key == "time"))
         {

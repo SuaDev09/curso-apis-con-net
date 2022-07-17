@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\MiddleWares",
+    "\\Properties",
+    "\\Services"
+  ],
+  "SelectedNode": "\\Controllers\\WeatherForecastController.cs",
+  "PreviewInSolutionExplorer": false
+}

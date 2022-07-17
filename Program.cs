@@ -7,6 +7,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Interfaz, dependencia ~~Cada vez que se llene la interfaz, se creara un objeto de la dependencia internamente
+builder.Services.AddScoped<IHelloWorldService, HelloWorldService>();
+//builder.Services.AddScoped(); //Se crea una nueva instancia de la dependencia pero al nivel de controlador 
+//builder.Services.AddSingleton(); se crea una unica instancia de esa depencia a nivel de toda la API ~~No es recomendable~~
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,7 +28,7 @@ app.UseAuthorization();
 
 //app.UseWelcomePage();
 
-app.UseTimeMiddleware();
+//app.UseTimeMiddleware();
 
 app.MapControllers();
 
