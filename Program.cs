@@ -1,3 +1,4 @@
+using webapi;
 using webapi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +9,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddSqlServer<TareasContext>(builder.Configuration.GetConnectionString("cnTareas"));
 //Interfaz, dependencia ~~Cada vez que se llene la interfaz, se creara un objeto de la dependencia internamente
 builder.Services.AddScoped<IHelloWorldService, HelloWorldService>();
 //builder.Services.AddScoped(); //Se crea una nueva instancia de la dependencia pero al nivel de controlador 
