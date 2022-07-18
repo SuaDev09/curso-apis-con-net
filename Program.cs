@@ -1,3 +1,5 @@
+using webapi.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,6 +13,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IHelloWorldService, HelloWorldService>();
 //builder.Services.AddScoped(); //Se crea una nueva instancia de la dependencia pero al nivel de controlador 
 //builder.Services.AddSingleton(); se crea una unica instancia de esa depencia a nivel de toda la API ~~No es recomendable~~
+builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+builder.Services.AddScoped<ITareasService, TareasService>();
+
 
 var app = builder.Build();
 
